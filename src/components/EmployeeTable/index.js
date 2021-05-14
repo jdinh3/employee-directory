@@ -1,6 +1,6 @@
 import React from "react";
 
-function EmployeeTable() {
+function Table(props) {
   return (
     <table className="table">
       <thead>
@@ -29,4 +29,4 @@ function EmployeeTable() {
   );
 }
 
-export default EmployeeTable;
+export default Table;

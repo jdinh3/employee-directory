@@ -1,4 +1,3 @@
-import logo from "./logo.svg";
 import "./App.css";
 import Jumbotron from "./components/Jumbotron/index";
 import SearchBar from "./components/SearchBar/index";

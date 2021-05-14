@@ -6,7 +6,7 @@ function Searchbar(props) {
       <input
         type="search"
         id="form1"
-        class="form-control"
+        className="form-control"
         placeholder="Search"
         aria-label="Search"
       />
