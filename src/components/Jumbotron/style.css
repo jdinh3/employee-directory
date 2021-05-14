@@ -1,0 +1,6 @@
+.jumbotron {
+    background: rgb(10, 26, 116);
+    padding: 20px;
+    color: white;
+    border-bottom: 8px solid red;
+}
