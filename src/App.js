@@ -1,14 +1,14 @@
 import "./App.css";
-import Jumbotron from "./components/Jumbotron/index";
-import SearchBar from "./components/SearchBar/index";
-import EmployeeTable from "./components/EmployeeTable/index";
+import Header from "./components/Header";
+import SearchBar from "./components/SearchBar";
+import Body from "./components/Body";
 
 function App() {
   return (
     <div className="App">
-      <Jumbotron />
+      <Header />
       <SearchBar />
-      <EmployeeTable />
+      <Body />
     </div>
   );
 }

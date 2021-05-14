@@ -1,6 +1,8 @@
 import React from "react";
 
 function Table(props) {
+  console.log(props);
+
   return (
     <table className="table">
       <thead>
@@ -17,7 +19,7 @@ function Table(props) {
           <th scope="row">
             <img src="https://www.placecage.com/c/100/150" alt="employee"></img>
           </th>
-          <td>Otto Man</td>
+          <td>Name</td>
           <td className="text-justify">(224)622-6222</td>
           <td>
             <a href="mailto: Otto@gmail.com"> Otto@gmail.com</a>

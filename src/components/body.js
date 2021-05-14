@@ -1,18 +1,18 @@
 import React, { Component } from "react";
-import API from "../../utils/API";
-import Table from "../components/EmployeeTable/index";
-
-export default class EmployeeTable extends Component {
+import API from "../utils/API";
+import Table from "./EmployeeTable";
+export default class Body extends Component {
   state = {
-    employees: [{}],
+    employees: [],
     filteredEmployees: [],
   };
 
-  //   When we push this data into the state, it runs into issues, so i'm going to sanitize it
   componentDidMount() {
     API.getEmployees().then((res) => {
+      console.log(res);
+      // maps through the data
       const holdData = res.data.results.map((employee) => {
-        return employee.name;
+        return employee;
       });
       this.setState({ employees: holdData });
       console.log(this.state.employees);
@@ -20,6 +20,10 @@ export default class EmployeeTable extends Component {
   }
 
   render() {
-    return <Table />;
+    return (
+      <div className="container">
+        <Table users={this.state.users} />
+      </div>
+    );
   }
 }
