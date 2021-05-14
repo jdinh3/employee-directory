@@ -10,7 +10,7 @@ export default class Body extends Component {
   componentDidMount() {
     API.getEmployees().then((res) => {
       console.log(res);
-      // maps through the data
+      // maps through the employee data
       const holdData = res.data.results.map((employee) => {
         return employee;
       });

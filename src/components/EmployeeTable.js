@@ -1,8 +1,6 @@
 import React from "react";
 
 function Table(props) {
-  // console.log("meh", props.employees[0].name.first);
-
   const employeeData = props.employees.map((employee) => {
     return (
       <tbody>
