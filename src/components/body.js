@@ -22,7 +22,7 @@ export default class Body extends Component {
   render() {
     return (
       <div className="container">
-        <Table users={this.state.users} />
+        <Table employees={this.state.employees} />
       </div>
     );
   }

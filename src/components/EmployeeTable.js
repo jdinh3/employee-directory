@@ -1,7 +1,30 @@
 import React from "react";
 
 function Table(props) {
-  console.log(props);
+  // console.log("meh", props.employees[0].name.first);
+
+  const employeeData = props.employees.map((employee) => {
+    return (
+      <tbody>
+        <tr>
+          <th scope="row">
+            <img
+              src={employee.picture.large}
+              alt="{employee.name.first}{employee.name.last}"
+            ></img>
+          </th>
+          <td>
+            {employee.name.first} {employee.name.last}
+          </td>
+          <td className="text-justify">{employee.phone}</td>
+          <td>
+            <a href="mailto: Otto@gmail.com">{employee.email}</a>
+          </td>
+          <td>{employee.dob.date}</td>
+        </tr>
+      </tbody>
+    );
+  });
 
   return (
     <table className="table">
@@ -14,19 +37,7 @@ function Table(props) {
           <th scope="col">DOB</th>
         </tr>
       </thead>
-      <tbody>
-        <tr>
-          <th scope="row">
-            <img src="https://www.placecage.com/c/100/150" alt="employee"></img>
-          </th>
-          <td>Name</td>
-          <td className="text-justify">(224)622-6222</td>
-          <td>
-            <a href="mailto: Otto@gmail.com"> Otto@gmail.com</a>
-          </td>
-          <td>07-22-1964</td>
-        </tr>
-      </tbody>
+      {employeeData}
     </table>
   );
 }
