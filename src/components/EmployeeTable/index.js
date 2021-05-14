@@ -6,6 +6,7 @@ function EmployeeTable() {
       <thead>
         <tr>
           <th scope="col">Images</th>
+          <th scope="col">Name</th>
           <th scope="col">Phone</th>
           <th scope="col">Email</th>
           <th scope="col">DOB</th>
@@ -13,8 +14,11 @@ function EmployeeTable() {
       </thead>
       <tbody>
         <tr>
-          <th scope="row">1</th>
-          <td>(224)622-6222</td>
+          <th scope="row">
+            <img src="https://www.placecage.com/c/100/150" alt="employee"></img>
+          </th>
+          <td>Otto Man</td>
+          <td className="text-justify">(224)622-6222</td>
           <td>
             <a href="mailto: Otto@gmail.com"> Otto@gmail.com</a>
           </td>
