@@ -1,4 +1,5 @@
 import React from "react";
+import Moment from "react-moment";
 
 function EmployeeTable(props) {
   return (
@@ -37,7 +38,11 @@ const Employee = ({ employee }) => {
       <td>
         <a href="mailto: Otto@gmail.com">{employee.email}</a>
       </td>
-      <td>{employee.dob.date}</td>
+      <td>
+        <Moment format="MMM Do, YYYY" withTitle>
+          {employee.dob.date}
+        </Moment>
+      </td>
     </tr>
   );
 };
