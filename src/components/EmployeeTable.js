@@ -1,29 +1,6 @@
 import React from "react";
 
-function Table(props) {
-  const employeeData = props.employees.map((employee) => {
-    return (
-      <tbody>
-        <tr>
-          <th scope="row">
-            <img
-              src={employee.picture.large}
-              alt="{employee.name.first}{employee.name.last}"
-            ></img>
-          </th>
-          <td>
-            {employee.name.first} {employee.name.last}
-          </td>
-          <td className="text-justify">{employee.phone}</td>
-          <td>
-            <a href="mailto: Otto@gmail.com">{employee.email}</a>
-          </td>
-          <td>{employee.dob.date}</td>
-        </tr>
-      </tbody>
-    );
-  });
-
+function EmployeeTable(props) {
   return (
     <table className="table">
       <thead>
@@ -35,9 +12,34 @@ function Table(props) {
           <th scope="col">DOB</th>
         </tr>
       </thead>
-      {employeeData}
+      <tbody>
+        {props.employees &&
+          props.employees.length &&
+          props.employees.map((employee, i) => (
+            <Employee key={`employee-${i}`} employee={employee} />
+          ))}
+      </tbody>
     </table>
   );
 }
 
-export default Table;
+const Employee = ({ employee }) => {
+  return (
+    <tr>
+      <th scope="row">
+        <img
+          src={employee.picture.large}
+          alt={`${employee.name.first} ${employee.name.last}`}
+        ></img>
+      </th>
+      <td>{`${employee.name.first} ${employee.name.last}`}</td>
+      <td className="text-justify">{employee.phone}</td>
+      <td>
+        <a href="mailto: Otto@gmail.com">{employee.email}</a>
+      </td>
+      <td>{employee.dob.date}</td>
+    </tr>
+  );
+};
+
+export default EmployeeTable;

@@ -9,9 +9,8 @@ class SearchBar extends Component {
   handleInputChange = (event) => {
     // Grabs the value of the user's input
     const { value } = event.target;
-
+    this.props.onSearchCallback(value);
     this.setState({ value });
-    console.log(value);
   };
 
   render() {

@@ -4,8 +4,8 @@ import Table from "./EmployeeTable";
 export default class Body extends Component {
   state = {
     employees: [],
-    filteredEmployees: [],
   };
+  filteredEmployees = [];
 
   componentDidMount() {
     API.getEmployees().then((res) => {
@@ -15,14 +15,29 @@ export default class Body extends Component {
         return employee;
       });
       this.setState({ employees: holdData });
-      console.log(this.state.employees);
     });
+  }
+
+  componentDidUpdate() {
+    const filtered = this.state.employees.filter((employee) => {
+      return employee.name.first
+        .toLowerCase()
+        .includes(this.props.searchData.toLowerCase());
+    });
+    this.filteredEmployees = filtered;
   }
 
   render() {
     return (
       <div className="container">
-        <Table employees={this.state.employees} />
+        <Table
+          employees={
+            !this.props.searchData
+              ? this.state.employees
+              : this.filteredEmployees
+          }
+        />
+        <p>{this.props.searchValue}</p>
       </div>
     );
   }
