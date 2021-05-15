@@ -2,8 +2,7 @@ import React, { Component } from "react";
 import "./App.css";
 import Header from "./components/Header";
 import SearchBar from "./components/SearchBar";
-import Body from "./components/Body";
-
+import Body from "./components/body";
 
 // pass value from search bar to app
 // create callback function in the parent
