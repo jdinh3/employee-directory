@@ -10,14 +10,14 @@ class SearchBar extends Component {
     // Grabs the value of the user's input
     const { value } = event.target;
     this.props.onSearchCallback(value);
-    this.setState({ value });
+    this.setState({ search: value });
   };
 
   render() {
     return (
       <div className="form-outline m-4">
         <input
-          value={this.state.value}
+          value={this.state.search}
           onChange={this.handleInputChange}
           name="employeeSearch"
           type="text"
