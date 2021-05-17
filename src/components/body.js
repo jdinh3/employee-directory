@@ -9,7 +9,6 @@ export default class Body extends Component {
 
   componentDidMount() {
     API.getEmployees().then((res) => {
-      console.log(res);
       // maps through the employee data
       const holdData = res.data.results.map((employee) => {
         return employee;
@@ -27,6 +26,22 @@ export default class Body extends Component {
     this.filteredEmployees = filtered;
   }
 
+  sortByName = () => {
+    const sortedEmployees = this.state.employees.sort((a, b) => {
+      let fa = a.name.first.toLowerCase(),
+        fb = b.name.first.toLowerCase();
+
+      if (fa < fb) {
+        return -1;
+      }
+      if (fa > fb) {
+        return 1;
+      }
+      return 0;
+    });
+    this.setState({ employees: sortedEmployees });
+  };
+
   render() {
     return (
       <div className="container">
@@ -36,6 +51,7 @@ export default class Body extends Component {
               ? this.state.employees
               : this.filteredEmployees
           }
+          sortEmployeeCallback={this.sortByName}
         />
         <p>{this.props.searchValue}</p>
       </div>

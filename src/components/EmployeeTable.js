@@ -1,5 +1,6 @@
 import React from "react";
 import Moment from "react-moment";
+import "./style.css";
 
 function EmployeeTable(props) {
   return (
@@ -7,7 +8,11 @@ function EmployeeTable(props) {
       <thead>
         <tr>
           <th scope="col">Images</th>
-          <th scope="col">Name</th>
+          <th scope="col">
+            <button className="nameBtn" onClick={props.sortEmployeeCallback}>
+              Name
+            </button>
+          </th>
           <th scope="col">Phone</th>
           <th scope="col">Email</th>
           <th scope="col">DOB</th>
