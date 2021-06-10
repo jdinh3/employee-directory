@@ -8,7 +8,7 @@ This is an employee directory that allows a user to view all of their employees 
 
 ## Technologies
 
-This React application breaks down the UI into components (header, search bar, table of employees), manages component state, and responds to user events. The data was generated from randomuser.me API.
+This React application breaks down the UI into components (header, search bar, table of employees), manages component state, and responds to user events. The employee data was generated from randomuser.me API.
 
 ## Screenshot
 
